@@ -1,0 +1,205 @@
+# Nmap 7.80 scan initiated Thu Jun 29 11:49:51 2023 as: nmap -sC -sV -oA test.txt 31.220.110.244
+Nmap scan report for 31.220.110.244
+Host is up (0.056s latency).
+Not shown: 991 filtered ports
+PORT      STATE  SERVICE   VERSION
+20/tcp    closed ftp-data
+21/tcp    open   ftp       ProFTPD or KnFTPD
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|_  ftp
+| tls-nextprotoneg: 
+|_  ftp
+22/tcp    closed ssh
+80/tcp    open   http      LiteSpeed
+| fingerprint-strings: 
+|   HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Connection: close
+|     content-type: text/html
+|     last-modified: Wed, 03 Nov 2021 19:55:41 GMT
+|     etag: "999-6182e93d-ea5e5607ffb591f3;;;"
+|     accept-ranges: bytes
+|     content-length: 2457
+|     date: Thu, 29 Jun 2023 06:20:05 GMT
+|     server: LiteSpeed
+|     platform: hostinger
+|     <!DOCTYPE html>
+|     <html lang="en-us" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+|     <style type="text/css">
+|     @charset "UTF-8";
+|     [ng:cloak],
+|     [ng-cloak],
+|     [data-ng-cloak],
+|     [x-ng-cloak],
+|     .ng-cloak,
+|   RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|     cache-control: private, no-cache, no-store, must-revalidate, max-age=0
+|     pragma: no-cache
+|     content-type: text/html
+|     content-length: 681
+|     date: Thu, 29 Jun 2023 06:20:06 GMT
+|     server: LiteSpeed
+|     <!DOCTYPE html>
+|     <html style="height:100%">
+|     <head>
+|     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+|     <title> 400 Bad Request
+|     </title></head>
+|     <body style="color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;">
+|     <div style="height:auto; min-height:100%; "> <div style="text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;">
+|     style="margin:0; font-size:150px; line-height:150px; font-weight:bold;">400</h1>
+|     style="margin-top:20px;font-size: 30px;">Bad Request
+|     </h2>
+|     <p>It is not a valid request!</p>
+|_    </div><
+|_http-server-header: LiteSpeed
+443/tcp   open   ssl/https LiteSpeed
+| fingerprint-strings: 
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Connection: close
+|     content-type: text/html
+|     last-modified: Wed, 03 Nov 2021 19:55:41 GMT
+|     etag: "999-6182e93d-ea5e5607ffb591f3;;;"
+|     accept-ranges: bytes
+|     content-length: 2457
+|     date: Thu, 29 Jun 2023 06:20:12 GMT
+|     server: LiteSpeed
+|     platform: hostinger
+|     <!DOCTYPE html>
+|     <html lang="en-us" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+|     <style type="text/css">
+|     @charset "UTF-8";
+|     [ng:cloak],
+|     [ng-cloak],
+|     [data-ng-cloak],
+|     [x-ng-cloak],
+|_    .ng-cloak,
+|_http-server-header: LiteSpeed
+3306/tcp  open   mysql     MySQL 5.5.5-10.5.19-MariaDB-cll-lve
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.5.19-MariaDB-cll-lve
+|   Thread ID: 94667264
+|   Capabilities flags: 65534
+|   Some Capabilities: IgnoreSigpipes, FoundRows, Speaks41ProtocolOld, ODBCClient, SupportsCompression, LongColumnFlag, Support41Auth, SupportsTransactions, ConnectWithDatabase, SwitchToSSLAfterHandshake, InteractiveClient, Speaks41ProtocolNew, DontAllowDatabaseTableColumn, IgnoreSpaceBeforeParenthesis, SupportsLoadDataLocal, SupportsMultipleResults, SupportsMultipleStatments, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: 7nFSNoay^J9z!0lQ1>$:
+|_  Auth Plugin Name: mysql_native_password
+7443/tcp  open   ssl/http  OpenResty web app server
+|_http-server-header: openresty
+|_http-title: 403 Forbidden
+| ssl-cert: Subject: commonName=*.hstgr.io
+| Subject Alternative Name: DNS:*.hstgr.io, DNS:hstgr.io
+| Not valid before: 2022-07-19T00:00:00
+|_Not valid after:  2023-07-19T23:59:59
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|_  http/1.1
+| tls-nextprotoneg: 
+|_  http/1.1
+8443/tcp  open   ssl/http  OpenResty web app server
+|_http-server-header: openresty
+|_http-title: Welcome to OpenResty!
+| ssl-cert: Subject: commonName=*.hstgr.io
+| Subject Alternative Name: DNS:*.hstgr.io, DNS:hstgr.io
+| Not valid before: 2022-07-19T00:00:00
+|_Not valid after:  2023-07-19T23:59:59
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|   h2
+|_  http/1.1
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+60443/tcp closed unknown
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.80%I=7%D=6/29%Time=649D2293%P=x86_64-pc-linux-gnu%r(HTTP
+SF:Options,AB0,"HTTP/1\.0\x20404\x20Not\x20Found\r\nConnection:\x20close\r
+SF:\ncontent-type:\x20text/html\r\nlast-modified:\x20Wed,\x2003\x20Nov\x20
+SF:2021\x2019:55:41\x20GMT\r\netag:\x20\"999-6182e93d-ea5e5607ffb591f3;;;\
+SF:"\r\naccept-ranges:\x20bytes\r\ncontent-length:\x202457\r\ndate:\x20Thu
+SF:,\x2029\x20Jun\x202023\x2006:20:05\x20GMT\r\nserver:\x20LiteSpeed\r\npl
+SF:atform:\x20hostinger\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en-us\"
+SF:\x20prefix=\"content:\x20http://purl\.org/rss/1\.0/modules/content/\x20
+SF:dc:\x20http://purl\.org/dc/terms/\x20foaf:\x20http://xmlns\.com/foaf/0\
+SF:.1/\x20og:\x20http://ogp\.me/ns#\x20rdfs:\x20http://www\.w3\.org/2000/0
+SF:1/rdf-schema#\x20sioc:\x20http://rdfs\.org/sioc/ns#\x20sioct:\x20http:/
+SF:/rdfs\.org/sioc/types#\x20skos:\x20http://www\.w3\.org/2004/02/skos/cor
+SF:e#\x20xsd:\x20http://www\.w3\.org/2001/XMLSchema#\">\n\n<head>\n\x20\x2
+SF:0\x20\x20<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x
+SF:20charset=UTF-8\">\n\x20\x20\x20\x20<style\x20type=\"text/css\">\n\x20\
+SF:x20\x20\x20\x20\x20\x20\x20@charset\x20\"UTF-8\";\n\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\[ng\\:cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\[ng-cloak
+SF:\],\n\x20\x20\x20\x20\x20\x20\x20\x20\[data-ng-cloak\],\n\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\[x-ng-cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\.ng
+SF:-cloak,\n\x20\x20\x20\x20\x20\x20\x20\x20")%r(RTSPRequest,398,"HTTP/1\.
+SF:1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\ncache-control:\x2
+SF:0private,\x20no-cache,\x20no-store,\x20must-revalidate,\x20max-age=0\r\
+SF:npragma:\x20no-cache\r\ncontent-type:\x20text/html\r\ncontent-length:\x
+SF:20681\r\ndate:\x20Thu,\x2029\x20Jun\x202023\x2006:20:06\x20GMT\r\nserve
+SF:r:\x20LiteSpeed\r\n\r\n<!DOCTYPE\x20html>\n<html\x20style=\"height:100%
+SF:\">\n<head>\n<meta\x20name=\"viewport\"\x20content=\"width=device-width
+SF:,\x20initial-scale=1,\x20shrink-to-fit=no\"\x20/>\n<title>\x20400\x20Ba
+SF:d\x20Request\r\n</title></head>\n<body\x20style=\"color:\x20#444;\x20ma
+SF:rgin:0;font:\x20normal\x2014px/20px\x20Arial,\x20Helvetica,\x20sans-ser
+SF:if;\x20height:100%;\x20background-color:\x20#fff;\">\n<div\x20style=\"h
+SF:eight:auto;\x20min-height:100%;\x20\">\x20\x20\x20\x20\x20<div\x20style
+SF:=\"text-align:\x20center;\x20width:800px;\x20margin-left:\x20-400px;\x2
+SF:0position:absolute;\x20top:\x2030%;\x20left:50%;\">\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20<h1\x20style=\"margin:0;\x20font-size:150px;\x20line-heig
+SF:ht:150px;\x20font-weight:bold;\">400</h1>\n<h2\x20style=\"margin-top:20
+SF:px;font-size:\x2030px;\">Bad\x20Request\r\n</h2>\n<p>It\x20is\x20not\x2
+SF:0a\x20valid\x20request!</p>\n</div><");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.80%T=SSL%I=7%D=6/29%Time=649D2299%P=x86_64-pc-linux-gnu
+SF:%r(GetRequest,AB0,"HTTP/1\.0\x20404\x20Not\x20Found\r\nConnection:\x20c
+SF:lose\r\ncontent-type:\x20text/html\r\nlast-modified:\x20Wed,\x2003\x20N
+SF:ov\x202021\x2019:55:41\x20GMT\r\netag:\x20\"999-6182e93d-ea5e5607ffb591
+SF:f3;;;\"\r\naccept-ranges:\x20bytes\r\ncontent-length:\x202457\r\ndate:\
+SF:x20Thu,\x2029\x20Jun\x202023\x2006:20:12\x20GMT\r\nserver:\x20LiteSpeed
+SF:\r\nplatform:\x20hostinger\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"e
+SF:n-us\"\x20prefix=\"content:\x20http://purl\.org/rss/1\.0/modules/conten
+SF:t/\x20dc:\x20http://purl\.org/dc/terms/\x20foaf:\x20http://xmlns\.com/f
+SF:oaf/0\.1/\x20og:\x20http://ogp\.me/ns#\x20rdfs:\x20http://www\.w3\.org/
+SF:2000/01/rdf-schema#\x20sioc:\x20http://rdfs\.org/sioc/ns#\x20sioct:\x20
+SF:http://rdfs\.org/sioc/types#\x20skos:\x20http://www\.w3\.org/2004/02/sk
+SF:os/core#\x20xsd:\x20http://www\.w3\.org/2001/XMLSchema#\">\n\n<head>\n\
+SF:x20\x20\x20\x20<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/h
+SF:tml;\x20charset=UTF-8\">\n\x20\x20\x20\x20<style\x20type=\"text/css\">\
+SF:n\x20\x20\x20\x20\x20\x20\x20\x20@charset\x20\"UTF-8\";\n\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\[ng\\:cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\[ng
+SF:-cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\[data-ng-cloak\],\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\[x-ng-cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\.ng-cloak,\n\x20\x20\x20\x20\x20\x20\x20\x20")%r(HTTPOptions,AB0,"HT
+SF:TP/1\.0\x20404\x20Not\x20Found\r\nConnection:\x20close\r\ncontent-type:
+SF:\x20text/html\r\nlast-modified:\x20Wed,\x2003\x20Nov\x202021\x2019:55:4
+SF:1\x20GMT\r\netag:\x20\"999-6182e93d-ea5e5607ffb591f3;;;\"\r\naccept-ran
+SF:ges:\x20bytes\r\ncontent-length:\x202457\r\ndate:\x20Thu,\x2029\x20Jun\
+SF:x202023\x2006:20:12\x20GMT\r\nserver:\x20LiteSpeed\r\nplatform:\x20host
+SF:inger\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en-us\"\x20prefix=\"co
+SF:ntent:\x20http://purl\.org/rss/1\.0/modules/content/\x20dc:\x20http://p
+SF:url\.org/dc/terms/\x20foaf:\x20http://xmlns\.com/foaf/0\.1/\x20og:\x20h
+SF:ttp://ogp\.me/ns#\x20rdfs:\x20http://www\.w3\.org/2000/01/rdf-schema#\x
+SF:20sioc:\x20http://rdfs\.org/sioc/ns#\x20sioct:\x20http://rdfs\.org/sioc
+SF:/types#\x20skos:\x20http://www\.w3\.org/2004/02/skos/core#\x20xsd:\x20h
+SF:ttp://www\.w3\.org/2001/XMLSchema#\">\n\n<head>\n\x20\x20\x20\x20<meta\
+SF:x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=UTF-8
+SF:\">\n\x20\x20\x20\x20<style\x20type=\"text/css\">\n\x20\x20\x20\x20\x20
+SF:\x20\x20\x20@charset\x20\"UTF-8\";\n\x20\x20\x20\x20\x20\x20\x20\x20\[n
+SF:g\\:cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\[ng-cloak\],\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\[data-ng-cloak\],\n\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\[x-ng-cloak\],\n\x20\x20\x20\x20\x20\x20\x20\x20\.ng-cloak,\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20");
+Service Info: OS: Unix
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jun 29 11:52:35 2023 -- 1 IP address (1 host up) scanned in 163.81 seconds
